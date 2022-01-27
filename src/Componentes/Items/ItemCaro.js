@@ -6,7 +6,8 @@ import "./ItemCaro.css";
 
 function ItemCaro(props) {
 
-   const [title, setTitle] = useState(props.title);
+   const [title, setTitle ] = useState(props.title);
+   console.log("ItemCato Evaluado por React");
 
     const ClickHandler = () => {
         setTitle("Update!!");

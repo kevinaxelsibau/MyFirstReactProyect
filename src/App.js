@@ -1,3 +1,6 @@
+// import react from "react";
+
+import Costos from "./Componentes/Costos/Costos";
 import ListaItem from "./Componentes/Items/ListaItem";
 
 function App() {
@@ -30,7 +33,7 @@ function App() {
 
   return (
     <div>
-      <h2>VAMOS A EMPEZAR!</h2>
+      <Costos />
       <ListaItem expenses={expenses} />
     </div>
   )
