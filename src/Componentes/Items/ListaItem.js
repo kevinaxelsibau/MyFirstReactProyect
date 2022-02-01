@@ -7,7 +7,7 @@ import { useState } from "react/cjs/react.development";
 const ListaItem = (props) => {
     const [filteredYear, setFilteredYear] = useState("2020");
 
-    const FilterChangeHandler = selectedYear => {
+    const FilterChangeHandler = (selectedYear) => {
         setFilteredYear(selectedYear);
     };
     return (
@@ -16,11 +16,15 @@ const ListaItem = (props) => {
                 <CostosFiltros selected={filteredYear}
                     onChangeFilter={FilterChangeHandler}
                 />
-                {props.items.map((expense =>
-                    <ItemCaro
-                        title={expense.title}
-                        amount={expense.amount}
-                        date={expense.date} />))}
+                {props.items.map((expense) =>
+                    expense.date.getFullYear().toString() === filteredYear ? (
+                        <ItemCaro 
+                        key={expense.id} 
+                        title={expense.title} 
+                        amount={expense.amount} 
+                        date={expense.date} />
+                    ) : null
+                )} 
 
             </Card>
         </div>

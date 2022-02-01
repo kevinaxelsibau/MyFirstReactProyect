@@ -35,7 +35,7 @@ const App = () => {
   const [expenses, setExpenses] = useState(Data_INICIAL);
 
   const AddCostosHandler = expenses => {
-    setExpenses(prevExpenses => {
+    setExpenses((prevExpenses) => {
       return [expenses, ...prevExpenses];
     });
   }
