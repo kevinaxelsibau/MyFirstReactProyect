@@ -1,8 +1,10 @@
-import ItemCaro from "./ItemCaro.js";
+// import ItemCaro from "./ItemCaro.js";
 import Card from "../UI/Card";
 import "./ListaItem.css";
 import CostosFiltros from "../Costos/CostosFiltros.js";
 import { useState } from "react/cjs/react.development";
+import ExpensesList from "../Costos/CostosLista.js";
+
 
 const ListaItem = (props) => {
     const [filteredYear, setFilteredYear] = useState("2021");
@@ -15,42 +17,21 @@ const ListaItem = (props) => {
         return expense.date.getFullYear().toString() === filteredYear;
     });
 
+        
    return (
         <div>
             <Card className="expenses">
                 <CostosFiltros selected={filteredYear}
                     onChangeFilter={FilterChangeHandler}
-                />
-                {FilterExpenses.length === 0 ? (<p>Not Expenses Found.</p>
-                ) : (                
-                FilterExpenses.map((expense) =>
-                        <ItemCaro
-                            key={expense.id}
-                            title={expense.title}
-                            amount={expense.amount}
-                            date={expense.date} />
-                ))}
-                
+                />          
+                <ExpensesList items={FilterExpenses}/>
             </Card>
         </div>
     );
+
 };
 
 export default ListaItem
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

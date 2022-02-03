@@ -6,6 +6,7 @@ import "./ItemCaro.css";
 
 function ItemCaro(props) {
     return (
+    <li>
         <Card className="expense-item">
             <ItemFecha date={props.date} />
             <div className="expense-item__description">
@@ -13,6 +14,7 @@ function ItemCaro(props) {
                 <div className="expense-item__price" >${props.amount}</div>
             </div>
         </Card>
+        </li>
     );
 }
 export default ItemCaro; 
