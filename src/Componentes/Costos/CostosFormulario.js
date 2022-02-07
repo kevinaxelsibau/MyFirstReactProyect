@@ -4,7 +4,7 @@ import "./CostosFormulario.css";
 
 const CostosFormulario = (props) => {
 
-    const [addingExpense, setaddingExpense] = useState(false)
+    const [addingExpense, setAddingExpense] = useState(false);
 
     const [enteredTitle, setEnteredTitle] = useState(""),
         [enteredAmount, setEnteredAmount] = useState(""),
@@ -45,18 +45,16 @@ const CostosFormulario = (props) => {
         setEnteredAmount("");
         setEneteredDate("");
 
-        setaddingExpense(false)
-
+        setAddingExpense(false)
     };
 
-    const cancelHandler = () => { setaddingExpense(false) ;
-    
+    const cancelHandler = () => {
+        setAddingExpense(false);
     }
 
-    const addExpenseHandler = () => { setaddingExpense(true)
-    
+    const addExpenseHandler = () => {
+        setAddingExpense(true)
     }
-
 
     return (
         <form onSubmit={submitHandler}>
