@@ -1,4 +1,4 @@
-import React from "react";
+// import React, { useState } from "react";
 
 import CostosFormulario from "./CostosFormulario";
 import "./Costos.css";
@@ -21,3 +21,4 @@ const Costos = (props) => {
 };
 
 export default Costos;
+
